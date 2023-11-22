@@ -1,61 +1,30 @@
+
+import java.util.Scanner;
 public class BioskopWithScanner19 {
     public static void main(String[] args) {
-        
+        Scanner sc = new Scanner (System.in);
+        int baris, kolom;
+        String nama, next;
+
         String [][] penonton = new String [4][2];
-        
-        penonton [0][0] = "Amin";
-        penonton [0][1] = "Bena";
-        penonton [1][0] = "Candra";
-        penonton [1][1] = "Dela";
-        penonton [2][0] = "Eka";
-        penonton [2][1] = "Farhan";
-        penonton [3][0] = "Gisel";
-        penonton [3][1] = "Hana";
 
-        // System.out.println(penonton.length);
+        while (true) {
+            System.out.print("Masukkan nama : ");
+            nama = sc.nextLine();
+            System.out.print("Masukkan baris : ");
+            baris = sc.nextInt();
+            System.out.print("Masukkan kolom : ");
+            kolom = sc.nextInt();
+            sc.nextLine();
+            
+            penonton[baris-1][kolom-1] = nama;
 
-        // System.out.println(penonton[0].length);
-        // System.out.println(penonton[1].length);
-        // System.out.println(penonton[2].length);
-        // System.out.println(penonton[3].length);
+            System.out.print("Input penonton lainnya? (y/n): ");
+            next = sc.nextLine();
 
-        System.out.printf("%s \t %s \n" ,penonton[0][0], penonton[0][1]);
-        System.out.printf("%s \t %s \n" ,penonton[1][0], penonton[1][1]);
-        System.out.printf("%s \t %s \n" ,penonton[2][0], penonton[2][1]);
-        System.out.printf("%s \t %s \n" ,penonton[3][0], penonton[3][1]);
-
-        System.out.println(penonton.length);
-
-        // System.out.println(penonton[0].length);
-        // System.out.println(penonton[1].length);
-        // System.out.println(penonton[2].length);
-        // System.out.println(penonton[3].length);
-
-        // for (int i = 0; i < penonton.length; i++){
-        //     System.out.println("Panjang Baris ke-" + (i+1) + ": " + penonton[i].length);
-        // }
-
-        // for (String[] barisPenonton : penonton){
-        //     System.out.println("Panjang baris: " + barisPenonton.length);
-        // }
-
-        System.out.println("Penonoton pada baris ke-3: ");
-
-        // for (int i = 0; i < penonton[2].length; i++){
-        //     System.out.println(penonton[2][i]);
-        // }
-
-        // for (String i : penonton[2]){
-        //     System.out.println(i);
-        // }
-
-        for (int i = 0; i < penonton.length; i++) {
-            System.out.println("Penonotom pada baris ke-" + (i+1) + ": " + String.join(",", penonton[i]));
+            if (next.equalsIgnoreCase("n")) {
+                break;
+            }
         }
-
-
     }
-
-    
 }
-
